@@ -40,8 +40,7 @@ const PropsDemo = () => {
         <div className='main'>
             <div className='mainDiv'>
                 <div style={styles}>
-                    <FunctionalComponent />
-                    {/* string='Color Toggle' function={toggleColor} selectedStyle={ color }  */}
+                    <FunctionalComponent string='Color Toggle' function={toggleColor} selectedStyle={ color } />
                     <FunctionalComponent string='Background Color Toggle' function={toggleBackColor} selectedStyle={ backgroundColor } />
                     <FunctionalComponent string='Border Style Toggle' function={toggleBorderStyle} selectedStyle={ borderStyle } />
                     <FunctionalComponent string='Width Toggle' function={toggleWidth} selectedStyle={ width } />
@@ -76,6 +75,12 @@ FunctionalComponent.defaultProps = {
     function: () => console.log('Can I see this in my dev tools?'),
     selectedStyle: 'what style??'
 };
+
+FunctionalComponent.propsTypes = {
+    string: PropTypes.string.isRequired,
+    function: PropTypes.func.isRequired,
+    selectedStyle: PropTypes.string.isRequired
+}
 
 // const MyComponent = (props) => {
 //     return(
